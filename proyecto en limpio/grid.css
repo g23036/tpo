@@ -1,8 +1,8 @@
 .container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    grid-gap: 0rem;
+    grid-template-rows: repeat(3, 1fr) 2fr 2fr;
+    grid-gap: 1rem;
     grid-template-areas:
       "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
       "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
