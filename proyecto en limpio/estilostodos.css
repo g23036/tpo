@@ -259,3 +259,11 @@ clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     clip-path: none;
   }
 }
+.sociales,
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
