@@ -1,0 +1,261 @@
+/* Estilos de las letras*/
+body {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.5), rgba(0, 0, 0, 0.8));
+
+	font-size: 20px;
+  background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  margin-left: 5%;
+  margin-right: 10%px;
+  margin-top: 5%px;
+  margin-bottom: 0%px;
+}
+@media screen and (max-width:400px) {
+	body {
+		font-size:80%;
+		/* pantallas pequeñas */
+	}
+}
+
+@media screen and (min-width:401px) {
+	body {
+		font-size:100%;
+		/*pantallas medianas,grandes */
+	}
+}
+a{
+  .no-underline {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+	height:50px;
+	line-height:50px;
+	color:rgb(24, 24, 24);
+	text-align:center;
+	left:0;
+	width:100%;
+  font-size: 22px;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+	height:0px;
+	line-height:50px;
+	color:rgba(0, 0, 0, 0.823);
+	text-align:left;
+	left:20px;
+	width:100%;
+  font-size: 16px;
+  
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+	height:50px;
+	line-height:50px;
+	color:rgb(0, 0, 0);
+	text-align:left;
+	left:20px;
+	width:100%;
+  font-size: 14px;
+}
+p{
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+	height:60px;
+	color:white;
+	text-align:center;
+	width:80%;
+  font-size: 30px;
+
+}
+
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  position:absolute;
+  height:50px;
+  line-height:50px;
+  background:transparent;
+  color:rgb(243, 234, 234);
+  text-align:center;
+  left:0;
+  width:100%;
+}
+
+/*Desde acá tenemos la configuracion para las pestañas*/
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.tabcontent {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.tabcontent.active {
+  display: block;
+}
+/* responsive de las pestañas*/
+@media only screen and (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+  }
+  .tab {
+    margin: 5px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .tabcontent {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+.language-button-container { /* Contenedor para el botón de cambio de idiomas */
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.language-button {
+  padding: 5px;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .language-button-container {
+    top: 10%;
+    right: 10%;
+    padding: 1%;
+    font-size: 1em;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .language-button-container {
+    top: 15%;
+    right: 15%;
+    padding: 0.5%;
+    font-size: 0.8em;
+    align-items: center;
+  }
+}
+
+
+.video-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+.video-container {
+max-width: 800px;
+}
+}
+
+@media (min-width: 992px) {
+.video-container {
+max-width: 1000px;
+}
+}
+
+/*Se debe configurar la ubicacion del logo para que no rompa el grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para ocultar el excedente de la imagen */
+}
+
+.grid-item img {
+  max-width: 60%;
+  height: auto;
+  clip-path: ellipse(47.5% 50% at 50% 50%);
+}
+img {
+opacity: 1;
+ }
+ .text-container {
+  grid-area: 1 / 1 / -1 / -1; /* Ocupa todas las filas y columnas del grid */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+}
+
+.grid-container2 {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr;
+
+}
+
+.grid-item2 {
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden; /* Para ocultar el excedente de la imagen */
+}
+
+.grid-item2 img {
+max-width: 100%;
+height: 100%;
+}
+img {
+opacity: 1;
+clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+@media screen and (max-width: 768px) {
+  .grid-container,
+  .grid-container2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .grid-item img,
+  .grid-item2 img {
+    clip-path: none;
+  }
+}
