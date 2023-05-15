@@ -1,0 +1,154 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    grid-gap: 0rem;
+    grid-template-areas:
+      "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
+      "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER";
+  }
+  
+  .LOGO { grid-area: LOGO; }
+  
+  .HEADER { grid-area: HEADER; }
+  
+  .TRADUCCION { grid-area: TRADUCCION; }
+  
+  .AREA1 { grid-area: AREA1; }
+  
+  .AREA2 { grid-area: AREA2; }
+  
+  .AREA3 { grid-area: AREA3; }
+  
+  .AREA4 { grid-area: AREA4; }
+  
+  .AREA5 { grid-area: AREA5; }
+  
+  .ARE6 { grid-area: ARE6; }
+  
+  .FOOTER { grid-area: FOOTER; }
+
+  .bienvenidos { display: none;}
+  
+  @media (max-width: 768px) {
+    .bienvenidos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 24px;
+      color: black;
+      grid-area: HEADER;
+    }
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "LOGO HEADER"
+        "TRADUCCION TRADUCCION"
+        "AREA1 AREA2"
+        "AREA3 AREA4"
+        "AREA5 ARE6"
+        "FOOTER FOOTER";
+        grid-gap: 0rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "bienvenidos"
+        "LOGO"
+        "TRADUCCION"
+        "HEADER"
+        "AREA1"
+        "AREA2"
+        "AREA3"
+        "AREA4"
+        "AREA5"
+        "ARE6"
+        "FOOTER";
+        grid-gap: 0rem;
+    }
+  }
+  .container1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    grid-template-areas:
+      "ubicacion"
+      "sociales"
+      "contacto"
+      "demas";
+  }
+  
+  .ubicacion { grid-area: ubicacion; }
+  
+  .sociales { grid-area: sociales; }
+  
+  .contacto { grid-area: contacto; }
+  
+  .demas { grid-area: demas; }
+  
+  @media screen and (min-width: 600px) {
+    .container1 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+      grid-template-areas:
+        "ubicacion contacto"
+        "sociales demas";
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .container1 {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 10px;
+      grid-template-areas:
+        "ubicacion sociales contacto demas";
+    }
+  }
+  
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: 0;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    height: auto;
+  }
+  
+  .grid-item {
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .grid-container2 {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 100px);
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .grid-item {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+  }
+  
