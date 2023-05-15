@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilostodos.css">
+    <link rel="stylesheet" href="estilovideo.css">
+	  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="grid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!--<script src="traduccion.js"></script>-->
+
+</head>
+<body>
+  <div class="bienvenidos"><h1>Bienvenidos</h1></div>
+    <div class="container">
+        <div class="LOGO">
+              <div class="grid-container">
+                <div class="grid-item">
+                  <img src="logofinal.png">
+                </div>
+              </div>
+              
+              
+        </div>
+        <div class="HEADER">
+     
+            <div class="tabs-container">
+                <div class="tabs">
+                  <button class="tab active" data-tab="tab1"><h1>home</h1></button>
+                  <button class="tab" data-tab="tab2"><h1>quienes somos</h1></button>
+                  <button class="tab" data-tab="tab3"><h1>contacto</h1></button>
+                  <button class="tab" data-tab="tab4"><h1>nuestro trabajo</h1></button>
+                  <button class="tab" data-tab="tab5"><h1>I & D</h1></button>
+                </div>
+                <div class="tab-content-container">
+                  <div class="tabcontent active" data-tab="tab1"><a href="vaquedando.html" target="_blank" ><h1>inicio</h1></a></div>
+                  <div class="tabcontent" data-tab="tab2"><a href="intento2.html" target="_blank" ><h1>somos</h1></a></div>
+                  <div class="tabcontent" data-tab="tab3"><a href="intento2.html" target="_blank" ><h1>formulario</h1></a></div>
+                  <div class="tabcontent" data-tab="tab4"><a href="intento2.html" target="_blank" ><h1>algunos trabajos</h1></a></div>
+                  <div class="tabcontent" data-tab="tab5"><a href="intento2.html" target="_blank" ><h1>diseño e investigación</h1></a></div>
+                </div>
+              </div>
+              <script>
+                // Obtener los elementos de las pestañas
+                const tabs = document.querySelectorAll('.tab');
+                const tabContents = document.querySelectorAll('.tabcontent');
+            
+                // Agregar eventos a cada pestaña
+                tabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                // Obtener el contenido correspondiente
+                const tabContent = document.querySelector(`.tabcontent[data-tab="${tab.dataset.tab}"]`);
+                // Desactivar todas las pestañas
+                tabs.forEach(tab => {
+                tab.classList.remove('active');
+                });
+                // Desactivar todos los contenidos
+                tabContents.forEach(tabContent => {
+                tabContent.classList.remove('active');
+                });
+                // Activar la pestaña correspondiente
+                tab.classList.add('active');
+                // Activar el contenido correspondiente
+                tabContent.classList.add('active');
+                // Desactivar la pestaña y el contenido después de 2 segundos
+                setTimeout(() => {
+                tab.classList.remove('active');
+                tabContent.classList.remove('active');
+                    }, 1500);
+                  });
+                });
+
+              </script>
+
+            </div>
+        <div class="TRADUCCION"><h1>
+            <div class="language-button" onclick="toggleLanguage()">Español/English</div> 
+            <script>// API Key para Google Translate
+              const apiKey = 'TU_API_KEY_AQUI';
+              
+              // Función para traducir la página
+              async function translatePage(targetLanguage) {
+                  // Obtener el contenido de la página
+                  const content = document.documentElement.outerHTML;
+              
+                  // Hacer una petición a la API de Google Translate
+                  const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                          q: content,
+                          target: targetLanguage
+                      })
+                  });
+              
+                  // Obtener la respuesta de la API
+                  const data = await response.json();
+              
+                  // Reemplazar el contenido de la página con la traducción
+                  document.documentElement.innerHTML = data.data.translations[0].translatedText;
+              }
+              
+              // Función para cambiar el idioma de la página
+              function toggleLanguage() {
+                  const currentLanguage = document.querySelector('.language-button').textContent;
+                  if (currentLanguage === 'Español') {
+                      translatePage('es');
+                      document.querySelector('.language-button').textContent = 'English';
+                  } else {
+                      translatePage('en');
+                      document.querySelector('.language-button').textContent = 'Español';
+                  }
+                      }</script>
+        </h1></div>
+        <div class="AREA1">
+          <style>
+            .grid-container2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+          }
+
+          .grid-item2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden; /* Por si hay excedente*/
+          }
+
+          .grid-item2 img {
+          max-width: 100%;
+          height: 100%;
+          }
+          img {
+          opacity: 1;
+          clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+          }
+          </style>
+          <div class="grid-container2">
+            <div class="grid-item2">
+              <img src="Drones-campo.jpg">
+            </div>
+            </div>
+            
+        </div>
+        <div class="AREA2">
+         <div class="grid-container">
+          <div class="text-container">
+        <p>El uso de drones en la agricultura cumple  funciones como:<br>
+
+          Mapeo de campos <br>
+          Vigilancia y monitoreo de los cultivos<br>
+          Plagas y enfermedades<br>
+          Eficiencia de irrigación
+          Aplicación de plaguicidas
+          Aplicación precisa en áreas de difícil acceso<br>
+          Menor exposición del aplicador<br>
+          Ahorro de agua y tiempo<br></p>
+          </div>
+          </div>
+        </div>
+        <div class="AREA3">
+          <div class="grid-container">
+            <div class="text-container">
+              <p>Lorem ipsum dolor sit amet,<br> consectetur<br> adipiscing elit.<br> Duis tristique<br> lectus id l<br>igula <br>tristique<br> commodo. Ut convallis libero vel ipsum tincidunt <br>suscipit. Suspendisse nec sem nunc<br>. Nam euismod, felis sit amet <br>convallis rhoncus,<br> justo tellus rutrum lectus, id bibendum risus lectus non velit.</p>
+            </div>
+          </div></div>
+        <div class="AREA4">
+          <style>
+            .grid-container3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+
+            }
+
+            .grid-item3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* por si hay excedente */
+            }
+
+            .grid-item3 img {
+            max-width: 100%;
+            height: 100%;
+            }
+            img {
+            opacity: 1;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            }
+          </style>
+           <div class="grid-container3">
+            <div class="grid-item3">
+              <img src="drones - industria1.jpg">
+            </div>
+            </div>
+        </div>
+        <div class="AREA5">
+       <div class="video.container">
+        <div class="grid-item">
+          <video autoplay controls loop>
+          <source src="Mini 3 Pro.mp4" type="video/mp4">
+          </video>
+          </div>
+          </div>
+          </div>
+        <div class="ARE6">
+          <div class="video.container">
+            <div class="grid-item">
+              <video autoplay controls loop muted>
+              <source src="Mi video.mp4" type="video/mp4">
+              </video>
+              </div>
+              </div>
+          </div>
+        </div></div>
+        <div class="FOOTER">
+            <div class="container1">
+                <div class="ubicacion"><h2> nuestra direccion</h2><br>
+                    <h3> Cerro La Gloria- Mendoza - Argentina</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13401.428032401385!2d-68.90148324331001!3d-32.888727977870815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0834da3d73f5%3A0x27da1f4be0cdbb4f!2sCerro%20de%20la%20Gloria!5e0!3m2!1ses!2sar!4v1683926505481!5m2!1ses!2sar" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="sociales"><h1> sociales</h1>
+                   <img /*src="imagenes/instagram-new.jpg"><a href="https://www.instagram.com/" target="_blank" ><h3>instragram</h3></a>
+                    <img /*src="imagenes/twitter1.jpg"> <a href="https://www.instagram.com/https://twitter.com/" target="_blank" ><h3>twitter</h3></a>
+                    <img /*src="imagenes/telegram1.jpg"> <a href="https://www.telegram.com/" target="_blank" ><h3>telegram</h3></a>
+                    <p>Copyright 2023©</div>
+                <div class="contacto"><h2> consultas </h2><br><br><br>
+                    <form action="index.html" method="get">
+                    <script src="js/validateadress.js"></script>
+                    <ul>
+                    <li>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="user_name">
+                    </li>
+                    <li>
+                    <label for="mail">Email:</label>
+                    <input type="email" id="mail" name="user_mail">
+                    </li>
+                    <li>
+                    <label for="msg">Mensaje:</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                    </li>
+                    </ul>
+                    <button type='submit' id='validate'>Enviar Consulta</button>
+                    </form>
+                    </div>
+                    
+                <div class="demas"><h1>demas</h1>
+                <h1>legales<br>
+                contacto<br>
+                soporte<br></h1>
+                </div>
+                
+                
+
+
+            
+              </div>
+        </div>
+      </div>
+    
+</body>
+</html>
