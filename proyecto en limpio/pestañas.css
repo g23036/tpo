@@ -1,0 +1,48 @@
+ /* Estilos para las pestañas */
+ .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+
+  .tab {
+    position: relative;
+    flex: 1;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border-bottom: 3px solid transparent;
+  }
+
+  .tab:hover {
+    color: #fff;
+    border-bottom: 3px solid #fff;
+  }
+
+  /* Estilos para el contenido de las pestañas */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .tab:hover + .tab-content {
+    display: inline-block;
+  }
