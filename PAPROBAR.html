@@ -10,43 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <!--<script src="traduccion.js"></script>-->
     <style>
-        /*ESTILOS VIDEOS*/
-
-        .grid-container2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-
-  }
-
-  .grid-item2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Para ocultar el excedente de la imagen */
-  }
-
-  .grid-item2 img {
-  max-width: 100%;
-  height: 100%;
-  }
-  img {
-  opacity: 1;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  }
-  @media screen and (max-width: 768px) {
-    .grid-container2 {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .grid-item2 img {
-      clip-path: none;
-    }
-  }
-        /* Estilos de las letras*/
 body {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.5), rgba(0, 0, 0, 0.8));
 
@@ -117,7 +80,7 @@ p {
   color: white;
   text-align: center;
   width: 80%;
-  font-size: 20px; /* Utilizamos vw (viewport width) para el tamaño de fuente */
+  font-size: 18px; /* Utilizamos vw (viewport width) para el tamaño de fuente */
 }
 
 
@@ -165,7 +128,7 @@ footer {
 .tabcontent.active {
   display: block;
 }
-/* responsive de las pestañas*/
+/* medias de las pestañas*/
 @media only screen and (max-width: 600px) {
   .tabs {
     flex-direction: column;
@@ -244,8 +207,8 @@ footer {
         "TRADUCCION"
         "AREA1" 
         "AREA2"
-        "AREA3" 
         "AREA4"
+        "AREA3" 
         "AREA5" 
         "ARE6"
         "FOOTER";
@@ -263,8 +226,8 @@ footer {
         "HEADER"
         "AREA1"
         "AREA2"
-        "AREA3"
         "AREA4"
+        "AREA3"
         "AREA5"
         "ARE6"
         "FOOTER";
@@ -314,7 +277,8 @@ footer {
       grid-template-areas:
         "ubicacion sociales contacto demas";
     }
-  }
+  } 
+  /*Aca tenemos los contenedores desde Area 1 al Area 4*/
     .grid-container1 {
       display: grid;
       grid-template-columns: 1fr;
@@ -325,7 +289,7 @@ footer {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; /* Por si hay excedente */
+      overflow: hidden;
     }
 
     .grid-item1 img {
@@ -376,7 +340,7 @@ footer {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; /* Por si hay excedente */
+      overflow: hidden; 
     }
 
     .grid-item4 img {
@@ -391,7 +355,6 @@ footer {
 
     /* Media queries */
     @media (max-width: 768px) {
-      /* Ajustar las propiedades para pantallas de hasta 768px de ancho */
       .grid-container1,
       .grid-container2,
       .grid-container3,
@@ -402,7 +365,6 @@ footer {
     }
 
     @media (max-width: 480px) {
-      /* Ajustar las propiedades para pantallas de hasta 480px de ancho */
       .grid-container1,
       .grid-container2,
       .grid-container3,
@@ -411,14 +373,8 @@ footer {
         grid-template-rows: 1fr;
       }
     }
-  </style>
-
-</head>
-<body>
-  <div class="bienvenidos"><h1>Bienvenidos</h1></div>
-    <div class="container">
-      <style>
-        /*Se debe configurar la ubicacion del logo para que no rompa el grid*/
+  
+/*Se debe configurar la ubicacion del logo para que no rompa el grid*/
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -428,7 +384,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Para ocultar el excedente de la imagen */
+  overflow: hidden; 
 }
 .grid-item img {
   max-width: 60%;
@@ -443,7 +399,8 @@ opacity: 1;
     max-width: 40%;
     clip-path: ellipse(47.5% 50% at 50% 50%);;
   }
-}
+} 
+/*Aca configuramos el container de los videos que usamos el mismo para los dos*/
 .video-container {
   width: 100%;
   height: 0;
@@ -469,33 +426,12 @@ opacity: 1;
       left: 0;
     }
   }
-  .video-container {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-  overflow: hidden;
-}
+  </style>
 
-@media (max-width: 768px) {
-    .video-container {
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-      </style>
-
+</head>
+<body>
+  <div class="bienvenidos"><h1>Bienvenidos</h1></div>
+    <div class="container">
         <div class="LOGO">
               <div class="grid-container">
                 <div class="grid-item">
@@ -597,8 +533,7 @@ opacity: 1;
                       }</script>
          </h2></div>
 
-     <!-- Desde acá es el problema-->
-
+         
         <div class="AREA1">
           <div class="grid-container1">
             <div class="grid-item1">
@@ -607,6 +542,7 @@ opacity: 1;
             </div>
         </div>
 
+        
         <div class="AREA2">  
          <div class="grid-container2">
           <div class="text-container2">
@@ -623,6 +559,7 @@ opacity: 1;
           </div>
         </div>
 
+
         <div class="AREA3">
           <div class="grid-container3">
             <div class="text-container3">
@@ -631,13 +568,14 @@ opacity: 1;
           </div>
         </div>
 
+
         <div class="AREA4">
            <div class="grid-container4">
             <div class="grid-item4">
               <img src="drones - industria1.jpg">
             </div>
             </div>
-         </div>  <!-- Hasta acá es el problema-->
+         </div>  
 
 
         <div class="AREA5">
@@ -649,6 +587,8 @@ opacity: 1;
           </div>
         </div>
           </div>
+
+
         <div class="ARE6">
           <div class="video-container">
             <div class="grid-item">
@@ -659,6 +599,8 @@ opacity: 1;
               </div>
           </div>
         </div>
+
+
         <div class="FOOTER">
             <div class="container0">
                 <div class="ubicacion"><h3> nuestra direccion</h3><br>
