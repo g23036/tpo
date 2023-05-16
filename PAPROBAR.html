@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!--<script src="traduccion.js"></script>-->
+    <style>
+        /*ESTILOS VIDEOS*/
+
+        .grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+  }
+
+  .grid-item2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para ocultar el excedente de la imagen */
+  }
+
+  .grid-item2 img {
+  max-width: 100%;
+  height: 100%;
+  }
+  img {
+  opacity: 1;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  }
+  @media screen and (max-width: 768px) {
+    .grid-container2 {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .grid-item2 img {
+      clip-path: none;
+    }
+  }
+        /* Estilos de las letras*/
+body {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.5), rgba(0, 0, 0, 0.8));
+
+	font-size: 20px;
+  background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  margin-left: 5%;
+  margin-right: 10%px;
+  margin-top: 5%px;
+  margin-bottom: 0%px;
+}
+@media screen and (max-width:400px) {
+	body {
+		font-size:80%;
+		/* pantallas pequeñas */
+	}
+}
+
+@media screen and (min-width:401px) {
+	body {
+		font-size:100%;
+		/*pantallas medianas,grandes */
+	}
+}
+a{
+  .no-underline {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+	height:50px;
+	line-height:50px;
+	color:rgb(24, 24, 24);
+	text-align:center;
+	left:0;
+	width:100%;
+  font-size: 20px;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+	height:50px;
+	line-height:50px;
+	color:rgba(0, 0, 0, 0.823);
+	text-align:center;
+	left:0px;
+	width:100%;
+  font-size: 20px;
+  
+}
+h3 {
+  font-family: 'Montserrat', sans-serif;
+	height:50px;
+	line-height:50px;
+	color:rgb(0, 0, 0);
+	text-align:left;
+	left:20px;
+	width:100%;
+  font-size: 14px;
+}
+p {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  color: white;
+  text-align: center;
+  width: 80%;
+  font-size: 20px; /* Utilizamos vw (viewport width) para el tamaño de fuente */
+}
+
+
+footer {
+  font-family: 'Montserrat', sans-serif;
+  position:absolute;
+  height:50px;
+  line-height:50px;
+  background:transparent;
+  color:rgb(243, 234, 234);
+  text-align:center;
+  left:0;
+  width:100%;
+}
+
+/*Desde acá tenemos la configuracion para las pestañas*/
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 2px solid whitesmoke;
+}
+
+.tabcontent {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.tabcontent.active {
+  display: block;
+}
+/* responsive de las pestañas*/
+@media only screen and (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+  }
+  .tab {
+    margin: 5px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .tabcontent {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+      /*ACA TENEMOS LOS DOS GRID UTILIZADOS*/
+      .container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr) 2fr 2fr;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
+      "LOGO LOGO HEADER HEADER HEADER HEADER HEADER HEADER TRADUCCION TRADUCCION"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA1 AREA1 AREA1 AREA1 AREA1 AREA1 AREA2 AREA2 AREA2 AREA2"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA3 AREA3 AREA3 AREA3 AREA4 AREA4 AREA4 AREA4 AREA4 AREA4"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "AREA5 AREA5 AREA5 AREA5 AREA5 ARE6 ARE6 ARE6 ARE6 ARE6"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER"
+      "FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER";
+  }
+  
+  .LOGO { grid-area: LOGO; }
+  
+  .HEADER { grid-area: HEADER; }
+  
+  .TRADUCCION { grid-area: TRADUCCION; }
+  
+  .AREA1 { grid-area: AREA1; }
+  
+  .AREA2 { grid-area: AREA2; }
+  
+  .AREA3 { grid-area: AREA3; }
+  
+  .AREA4 { grid-area: AREA4; }
+  
+  .AREA5 { grid-area: AREA5; }
+  
+  .ARE6 { grid-area: ARE6; }
+  
+  .FOOTER { grid-area: FOOTER; }
+
+  .bienvenidos { display: none;}
+  
+  @media (max-width: 768px) {
+    .bienvenidos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 24px;
+      color: black;
+      grid-area: HEADER;
+    }
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "LOGO"
+        "HEADER"
+        "TRADUCCION"
+        "AREA1" 
+        "AREA2"
+        "AREA3" 
+        "AREA4"
+        "AREA5" 
+        "ARE6"
+        "FOOTER";
+        grid-gap: 0rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "bienvenidos"
+        "LOGO"
+        "TRADUCCION"
+        "HEADER"
+        "AREA1"
+        "AREA2"
+        "AREA3"
+        "AREA4"
+        "AREA5"
+        "ARE6"
+        "FOOTER";
+        grid-gap: 0rem;
+    }
+    .AREA1 {
+      width: 100%; /* Ajustamos el ancho del AREA1 al 100% en pantallas más pequeñas */
+      }
+      
+  }
+  .container0 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    grid-template-areas:
+      "ubicacion"
+      "sociales"
+      "contacto"
+      "demas";
+  }
+  
+  .ubicacion { grid-area: ubicacion; }
+  
+  .sociales { grid-area: sociales; }
+  
+  .contacto { grid-area: contacto; }
+  
+  .demas { grid-area: demas; }
+  
+  @media screen and (min-width: 600px) {
+    .container0 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+      grid-template-areas:
+        "ubicacion contacto"
+        "sociales demas";
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .container0 {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 5px;
+      grid-template-areas:
+        "ubicacion sociales contacto demas";
+    }
+  }
+    .grid-container1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .grid-item1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Por si hay excedente */
+    }
+
+    .grid-item1 img {
+      max-width: 100%;
+      height: 100%;
+    }
+
+    img {
+      opacity: 1;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .grid-container2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .text-container2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      padding: 20px;
+    }
+
+    .grid-container3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .text-container3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      padding: 20px;
+    }
+
+    .grid-container4 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .grid-item4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; /* Por si hay excedente */
+    }
+
+    .grid-item4 img {
+      max-width: 100%;
+      height: 100%;
+    }
+
+    img {
+      opacity: 1;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+
+    /* Media queries */
+    @media (max-width: 768px) {
+      /* Ajustar las propiedades para pantallas de hasta 768px de ancho */
+      .grid-container1,
+      .grid-container2,
+      .grid-container3,
+      .grid-container4 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Ajustar las propiedades para pantallas de hasta 480px de ancho */
+      .grid-container1,
+      .grid-container2,
+      .grid-container3,
+      .grid-container4 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="bienvenidos"><h1>Bienvenidos</h1></div>
+    <div class="container">
+      <style>
+        /*Se debe configurar la ubicacion del logo para que no rompa el grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para ocultar el excedente de la imagen */
+}
+.grid-item img {
+  max-width: 60%;
+  height: auto;
+  clip-path: ellipse(47.5% 50% at 50% 50%);
+}
+img {
+opacity: 1;
+ }
+ @media screen and (max-width: 768px) {
+  .grid-item img {
+    max-width: 40%;
+    clip-path: ellipse(47.5% 50% at 50% 50%);;
+  }
+}
+.video-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .video-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+      </style>
+
+        <div class="LOGO">
+              <div class="grid-container">
+                <div class="grid-item">
+                  <img src="logofinal.png">
+                </div>
+              </div>
+              
+      
+        </div>
+        <div class="HEADER">
+            <div class="tabs-container">
+                <div class="tabs">
+                  <button class="tab active" data-tab="tab1"><h1>home</h1></button>
+                  <button class="tab" data-tab="tab2"><h1>quienes somos</h1></button>
+                  <button class="tab" data-tab="tab3"><h1>contacto</h1></button>
+                  <button class="tab" data-tab="tab4"><h1>nuestro trabajo</h1></button>
+                  <button class="tab" data-tab="tab5"><h1>I & D</h1></button>
+                </div>
+                <div class="tab-content-container">
+                  <div class="tabcontent active" data-tab="tab1"><a href="listo.html" target="_blank" ><h1>inicio</h1></a></div>
+                  <div class="tabcontent" data-tab="tab2"><a href="intento2.html" target="_blank" ><h1>somos</h1></a></div>
+                  <div class="tabcontent" data-tab="tab3"><a href="intento2.html" target="_blank" ><h1>formulario</h1></a></div>
+                  <div class="tabcontent" data-tab="tab4"><a href="intento2.html" target="_blank" ><h1>algunos trabajos</h1></a></div>
+                  <div class="tabcontent" data-tab="tab5"><a href="intento2.html" target="_blank" ><h1>diseño e investigación</h1></a></div>
+                </div>
+              </div>
+              <script>
+                // Obtener los elementos de las pestañas
+                const tabs = document.querySelectorAll('.tab');
+                const tabContents = document.querySelectorAll('.tabcontent');
+            
+                // Agregar eventos a cada pestaña
+                tabs.forEach(tab => {
+                tab.addEventListener('mouseover', () => {
+                // Obtener el contenido correspondiente
+                const tabContent = document.querySelector(`.tabcontent[data-tab="${tab.dataset.tab}"]`);
+                // Desactivar todas las pestañas
+                tabs.forEach(tab => {
+                tab.classList.remove('active');
+                });
+                // Desactivar todos los contenidos
+                tabContents.forEach(tabContent => {
+                tabContent.classList.remove('active');
+                });
+                // Activar la pestaña correspondiente
+                tab.classList.add('active');
+                // Activar el contenido correspondiente
+                tabContent.classList.add('active');
+                // Desactivar la pestaña y el contenido después de 2 segundos
+                setTimeout(() => {
+                tab.classList.remove('active');
+                tabContent.classList.remove('active');
+                    }, 1500);
+                  });
+                });
+    
+              </script>
+              </div>
+
+        <div class="TRADUCCION"><h2>
+            <div class="language-button" onclick="toggleLanguage()">Español/English</div> 
+            <script>// API Key para Google Translate
+              const apiKey = '########';
+              
+              // Función para traducir la página
+              async function translatePage(targetLanguage) {
+                  // Obtener el contenido de la página
+                  const content = document.documentElement.outerHTML;
+              
+                  // Hacer una petición a la API de Google Translate
+                  const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=${apiKey}`, {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                          q: content,
+                          target: targetLanguage
+                      })
+                  });
+              
+                  // Obtener la respuesta de la API
+                  const data = await response.json();
+              
+                  // Reemplazar el contenido de la página con la traducción
+                  document.documentElement.innerHTML = data.data.translations[0].translatedText;
+              }
+              
+              // Función para cambiar el idioma de la página
+              function toggleLanguage() {
+                  const currentLanguage = document.querySelector('.language-button').textContent;
+                  if (currentLanguage === 'Español') {
+                      translatePage('es');
+                      document.querySelector('.language-button').textContent = 'English';
+                  } else {
+                      translatePage('en');
+                      document.querySelector('.language-button').textContent = 'Español';
+                  }
+                      }</script>
+         </h2></div>
+
+     <!-- Desde acá es el problema-->
+
+        <div class="AREA1">
+          <div class="grid-container1">
+            <div class="grid-item1">
+              <img src="Drones-campo.jpg">
+            </div>
+            </div>
+        </div>
+
+        <div class="AREA2">  
+         <div class="grid-container2">
+          <div class="text-container2">
+        <p>El uso de drones en la agricultura cumple  funciones como:<br>
+          Mapeo de campos <br>
+          Vigilancia y monitoreo de los cultivos<br>
+          Plagas y enfermedades<br>
+          Eficiencia de irrigación<br>
+          Aplicación de plaguicidas<br>
+          Aplicación precisa en áreas de difícil acceso<br>
+          Menor exposición del aplicador<br>
+          Ahorro de agua y tiempo<br></p>
+          </div>
+          </div>
+        </div>
+
+        <div class="AREA3">
+          <div class="grid-container3">
+            <div class="text-container3">
+              <p>Lorem ipsum dolor sit amet,<br> consectetur<br> adipiscing elit.<br> Duis tristique<br> lectus id l<br>igula <br>tristique<br> commodo. Ut convallis libero vel ipsum tincidunt <br>suscipit. Suspendisse nec sem nunc<br>. Nam euismod, felis sit amet <br>convallis rhoncus,<br> justo tellus rutrum lectus, id bibendum risus lectus non velit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="AREA4">
+           <div class="grid-container4">
+            <div class="grid-item4">
+              <img src="drones - industria1.jpg">
+            </div>
+            </div>
+         </div>  <!-- Hasta acá es el problema-->
+
+
+        <div class="AREA5">
+       <div class="video-container">
+        <div class="grid-item">
+          <video controls auto loop>
+          <source src="Mini 3 Pro.mp4" type="video/mp4">
+             </video>
+          </div>
+        </div>
+          </div>
+        <div class="ARE6">
+          <div class="video-container">
+            <div class="grid-item">
+              <video autoplay controls loop muted>
+              <source src="Mi video.mp4" type="video/mp4">
+              </video>
+              </div>
+              </div>
+          </div>
+        </div>
+        <div class="FOOTER">
+            <div class="container0">
+                <div class="ubicacion"><h3> nuestra direccion</h3><br>
+                    <h3> Cerro La Gloria- Mendoza - Argentina</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13401.428032401385!2d-68.90148324331001!3d-32.888727977870815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0834da3d73f5%3A0x27da1f4be0cdbb4f!2sCerro%20de%20la%20Gloria!5e0!3m2!1ses!2sar!4v1683926505481!5m2!1ses!2sar" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="sociales"><h3> sociales</h3>
+                   <img /*src="imagenes/instagram-new.jpg"><a href="https://www.instagram.com/" target="_blank" ><h3>instagram</h3></a>
+                    <img /*src="imagenes/twitter1.jpg"> <a href="https://www.instagram.com/https://twitter.com/" target="_blank" ><h3>twitter</h3></a>
+                    <img /*src="imagenes/telegram1.jpg"> <a href="https://www.telegram.com/" target="_blank" ><h3>telegram</h3></a>
+                    <h2>Copyright 2023©</h2></div>
+                <div class="container1"><h3> consultas </h3>
+                    <form action="index.html" method="get">
+                    <script src="js/validateadress.js"></script>
+                    <ul>
+                    <li>
+                    <label for="name"><h3>Nombre:</h3></label>
+                    <input type="text" id="name" name="user_name">
+                    </li>
+                    <li>
+                    <label for="mail"><h3>Email:</h3></label>
+                    <input type="email" id="mail" name="user_mail">
+                    </li>
+                    <li>
+                    <label for="msg"><h3>Mensaje:</h3></label>
+                    <textarea id="msg" name="user_message"></textarea>
+                    </li>
+                    </ul>
+                    <button type='submit' id='validate'>Enviar Consulta</button>
+                    </form>
+                    </div>
+                    
+                <div class="demas">
+                <h3>
+                legales<br>
+                contacto<br>
+                soporte<br>
+                políticas de Cookies<br>
+                políticas de privacidad<br>
+                </h3>
+              </div>
+              </div>
+        </div>
+      </div>
+    
+</body>
+</html>
